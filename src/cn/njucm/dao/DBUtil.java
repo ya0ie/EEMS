@@ -3,12 +3,12 @@ package cn.njucm.dao;
 import java.sql.*;
 import cn.njucm.po.*;
 public class DBUtil {
-    static Connection conn = null;
-    static String url = "jdbc:mysql://localhost:3306/eedb?characterEncoding=utf8&useSSL=true";
-    static String user = "root";
-    static String password = "123456";
+    public static Connection conn = null;
+    public static String url = "jdbc:mysql://localhost:3306/eedb?characterEncoding=utf8&useSSL=true";
+    public static String user = "root";
+    public static String password = "123456";
     //2.1 封装连接功能
-    public Connection getConn() {
+    public static Connection getConn() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(url, user, password);
@@ -19,7 +19,7 @@ public class DBUtil {
     }
 
     //2.2封装关闭功能
-    public void close(Connection conn, Statement st, ResultSet rs) {
+    public static void close(Connection conn, Statement st, ResultSet rs) {
         try {
             if (rs != null)
                 rs.close();
@@ -32,17 +32,16 @@ public class DBUtil {
         }
     }
 
-    public User SelectByUserAndPwd(String username,String password) {
+    public static User SelectByUsername(String username) {
         User user=null;
         Connection conn=null;
         PreparedStatement ps=null;
         ResultSet rs=null;
         conn = getConn();
-        String sql="Select * from emp where username=? and password=?";
+        String sql="Select * from emp where username=?";
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, username);
-            ps.setString(2, password);
             rs = ps.executeQuery();
             if(rs.next()) {
                 user=new User();

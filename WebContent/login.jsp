@@ -13,16 +13,16 @@
     request.setCharacterEncoding("UTF-8");
     String username=request.getParameter("user");
     String password=request.getParameter("pwd");
-%>
-<%
-    DBUtil Db=new DBUtil();
-    User user=Db.SelectByUserAndPwd(username,password);
-    if(user!=null){
-    response.sendRedirect("index.jsp");
-    session.setAttribute("name",user);
-}else{
-    System.out.println("login.html");
-}
+
+    User user = DBUtil.SelectByUsername(username);
+    if (user == null) {
+        System.out.println("用户未注册");
+    } else if (!user.getPassword().equals(password)) {
+        System.out.println("密码错误");
+    } else {
+        response.sendRedirect("index.jsp");
+        session.setAttribute("user", user);
+    }
 %>
 </body>
 </html>

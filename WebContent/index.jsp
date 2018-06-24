@@ -13,6 +13,6 @@
   </head>
   <body>
 欢迎登录！
-<%= ((User)session.getAttribute("name")).getRealname()%>
+<%= ((User)session.getAttribute("user")).getRealname()%>
   </body>
 </html>
