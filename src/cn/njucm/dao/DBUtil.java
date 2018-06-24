@@ -1,6 +1,8 @@
 package cn.njucm.dao;
 
 import java.sql.*;
+import java.util.ArrayList;
+
 import cn.njucm.po.*;
 public class DBUtil {
     public static Connection conn = null;
@@ -59,6 +61,35 @@ public class DBUtil {
             e.printStackTrace();
         }
         return user;
+    }
+
+    public static ArrayList<User> selectAllUser() {
+        ArrayList<User> users = new ArrayList<User>();
+
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        conn = getConn();
+        String sql="Select * from emp";
+        try {
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                User user = new User();
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setRealname(rs.getString("realname"));
+                user.setAge(rs.getInt("age"));
+                user.setSex(rs.getString("sex"));
+                user.setBirthday(rs.getString("birthday"));
+                user.setSalary(rs.getDouble("salary"));
+                users.add(user);
+            }
+            close(conn, ps, rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return users;
     }
 }
 

@@ -28,10 +28,7 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="library" name="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v6.0 (2)" level="application" />
-    <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.web.container" level="application" />
-    <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.module.container" level="application" />
-    <orderEntry type="library" name="apache-tomcat-7.0" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.39-bin" level="project" />
+    <orderEntry type="library" name="apache-tomcat-7.0" level="project" />
   </component>
 </module>
