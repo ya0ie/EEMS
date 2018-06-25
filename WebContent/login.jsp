@@ -10,6 +10,7 @@
 <%--输出前台传过来的值：--%>
 <%--解决数据库问题：加-连-句-执-出-关 --%>
 <%
+	System.out.println("yes");
     request.setCharacterEncoding("UTF-8");
     String username=request.getParameter("user");
     String password=request.getParameter("pwd");

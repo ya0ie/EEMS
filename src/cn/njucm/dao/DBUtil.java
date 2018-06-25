@@ -92,5 +92,27 @@ public class DBUtil {
         }
         return users;
     }
+
+    public static boolean insertUser(User user) {
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        conn = getConn();
+        boolean flag=false;
+        String sql="insert into emp(username,password) values(?,?)";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, user.getUsername());
+            ps.setString(2, user.getPassword());
+            int count=ps.executeUpdate();
+            if(count!=0){
+                flag=true;
+            }
+            close(conn, ps, rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
 }
 
