@@ -17,7 +17,7 @@
     ArrayList<User> users = null;
     users = DBUtil.selectAllUser();
     for (User user : users) {
-        System.out.println(user.getUsername());
+        System.out.println(user.getId());
     }
 %>
 

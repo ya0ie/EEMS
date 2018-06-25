@@ -8,7 +8,7 @@ public class DBUtil {
     public static Connection conn = null;
     public static String url = "jdbc:mysql://localhost:3306/eedb?characterEncoding=utf8&useSSL=true";
     public static String user = "root";
-    public static String password = "123456";
+    public static String password = "echo";
     //2.1 封装连接功能
     public static Connection getConn() {
         try {
@@ -76,6 +76,7 @@ public class DBUtil {
             rs = ps.executeQuery();
             while (rs.next()) {
                 User user = new User();
+                user.setId(rs.getInt("id"));
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 user.setRealname(rs.getString("realname"));

@@ -16,7 +16,7 @@
 <body>
 	<p style="margin-left: 70%">
 		欢迎登录！
-		<%=((User) session.getAttribute("user")).getRealname()%>
+		<%-- <%=((User) session.getAttribute("user")).getRealname()%> --%>
 	</p>
 	<div style="overflow: auto; height: 400px; margin-top: 10%">
 		<table border="1" style="margin-left: 40%;">
