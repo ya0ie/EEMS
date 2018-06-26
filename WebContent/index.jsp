@@ -44,12 +44,22 @@
 				<td><%=user.getSex()%></td>
 				<td><%=user.getBirthday()%></td>
 				<td><%=user.getSalary()%></td>
+				<td><a href="javascript:edit(<%=user.getId()%>)">编辑</a></td>
+				<td><a href="javascript:del(<%=user.getId()%>)">删除</a></td>
 			</tr>
 			<%
 				}
 			%>
 		</table>
 	</div>
-
 </body>
+<script type="text/javascript" src="static/js/public/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	function edit(e) {
+		$.post("./edit.jsp", {"userId":e});
+    }
+    function del(e) {
+        $.post("./edit.jsp", {"userId":e});
+    }
+</script>
 </html>
