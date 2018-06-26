@@ -14,16 +14,16 @@
 <%
 request.setCharacterEncoding("UTF-8");
 response.setCharacterEncoding("UTF-8");
-User user=null;
-user.setUsername(request.getParameter("edit_username"));
-user.setRealname(request.getParameter("edit_realname"));
-user.setAge(Integer.valueOf(request.getParameter("edit_age")).intValue());
-user.setSex(request.getParameter("edit_sex"));
-user.setBirthday(request.getParameter("edit_birthday"));
-user.setSalary(Integer.valueOf(request.getParameter("edit_salary")).intValue());
-String password=request.getParameter("edit_password");
-String spassword=request.getParameter("edit_spassword");
-if(password!=spassword){
+User user=new User();
+user.setUsername(request.getParameter("username"));
+user.setRealname(request.getParameter("realname"));
+user.setAge(Integer.valueOf(request.getParameter("age")).intValue());
+user.setSex(request.getParameter("sex"));
+user.setBirthday(request.getParameter("birthday"));
+user.setSalary(Double.parseDouble(request.getParameter("salary")));
+String password=request.getParameter("password");
+String spassword=request.getParameter("spassword");
+if(!password.equals(spassword)){
 	System.out.println("密码不一致!");
 }else{
 	user.setPassword(spassword);
