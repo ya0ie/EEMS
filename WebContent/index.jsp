@@ -71,8 +71,8 @@
 					<td><%=user.getSex()%></td>
 					<td><%=user.getBirthday()%></td>
 					<td><%=user.getSalary()%></td>
-					<td><a class="btn btn-sm btn-primary" href="javascript:edit(<%=user.getId()%>)">编辑</a></td>
-					<td><a class="btn btn-sm btn-danger" href="javascript:del(<%=user.getId()%>)">删除</a></td>
+					<td><a class="label label-primary" href="javascript:edit(<%=user.getId()%>)">编辑</a></td>
+					<td><a class="label label-danger" href="javascript:del(<%=user.getId()%>)">删除</a></td>
 				</tr>
 				<%
 					}
