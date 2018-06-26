@@ -166,10 +166,54 @@ public class DBUtil {
         }
         return flag;
     }
-    
+    public static User selectById(int id) {
+        User user=null;
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        conn = getConn();
+        String sql="Select * from emp where id=?";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            if(rs.next()) {
+                user=new User();
+                user.setAge(rs.getInt("age"));
+                user.setId(rs.getInt("id"));
+                user.setBirthday(rs.getString("birthday"));
+                user.setPassword(rs.getString("password"));
+                user.setUsername(rs.getString("username"));
+                user.setRealname(rs.getString("realname"));
+                user.setSalary(rs.getDouble("salary"));
+                user.setSex(rs.getString("sex"));
+            }
+            close(conn, ps, rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
     public static boolean deleteByUserId(int userId) {
-    	boolean flag = true;
-		return flag;
+            Connection conn=null;
+            PreparedStatement ps=null;
+            ResultSet rs=null;
+            conn = getConn();
+            boolean flag=false;
+            String sql="delete from emp where id=?";
+            try {
+                ps = conn.prepareStatement(sql);
+                ps.setInt(1, userId);
+                int count=ps.executeUpdate();
+                if(count!=0){
+                    flag=true;
+                }
+                close(conn, ps, rs);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return flag;
+        }
 	}
-}
+
 
