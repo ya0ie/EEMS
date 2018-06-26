@@ -8,7 +8,7 @@ public class DBUtil {
     public static Connection conn = null;
     public static String url = "jdbc:mysql://localhost:3306/eedb?characterEncoding=utf8&useSSL=true";
     public static String user = "root";
-    public static String password = "echo";
+    public static String password = "123456";
     //2.1 封装连接功能
     public static Connection getConn() {
         try {
@@ -99,11 +99,63 @@ public class DBUtil {
         ResultSet rs=null;
         conn = getConn();
         boolean flag=false;
-        String sql="insert into emp(username,password) values(?,?)";
+        String sql="insert into emp(username,password,realname,age,sex,birthday,salary) values(?,?,?,?,?,?,?)";
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPassword());
+            ps.setString(3, user.getRealname());
+            ps.setInt(4, user.getAge());
+            ps.setString(5, user.getSex());
+            ps.setString(6, user.getBirthday());
+            ps.setDouble(7, user.getSalary());
+            int count=ps.executeUpdate();
+            if(count!=0){
+                flag=true;
+            }
+            close(conn, ps, rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+    public static boolean updateUser(User user) {
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        conn = getConn();
+        boolean flag=false;
+        String sql="update emp set username=?,password=?,realname=?,age=?,sex=?,birthday=?,salary=? where username=?";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, user.getUsername());
+            ps.setString(2, user.getPassword());
+            ps.setString(3, user.getRealname());
+            ps.setInt(4, user.getAge());
+            ps.setString(5, user.getSex());
+            ps.setString(6, user.getBirthday());
+            ps.setDouble(7, user.getSalary());
+            ps.setString(8, user.getUsername());
+            int count=ps.executeUpdate();
+            if(count!=0){
+                flag=true;
+            }
+            close(conn, ps, rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+    public static boolean deleteUser(User user) {
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        conn = getConn();
+        boolean flag=false;
+        String sql="delete from emp where username=?";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, user.getUsername());
             int count=ps.executeUpdate();
             if(count!=0){
                 flag=true;
