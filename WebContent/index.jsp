@@ -56,10 +56,12 @@
 <script type="text/javascript" src="static/js/public/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 	function edit(e) {
-		$.post("./edit.jsp", {"userId":e});
+		window.location.href = "./edit.jsp?userId=" + e;
     }
     function del(e) {
-        $.post("./edit.jsp", {"userId":e});
+	    if (confirm("确认删除id为" + e + "的用户？")) {
+            $.post("./delete.jsp", {"userId":e});
+		}
     }
 </script>
 </html>
