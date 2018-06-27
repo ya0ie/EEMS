@@ -3,8 +3,9 @@
 	vertical-align: middle;
 	font-size: 20px;
 }
-body {
-	width: 1000px !important;
+#header {
+	min-width: 1324px !important;
+	margin: 0 auto;
 }
 .table td {
 	font-size: 17px;

@@ -12,13 +12,13 @@
 <html>
 <head>
 <title>主页</title>
-<link href="./static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="./static/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="./static/bootstrap/css/dashboard.css" rel="stylesheet">
+	<link href="./static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./static/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="./static/bootstrap/css/dashboard.css" rel="stylesheet">
+	<link rel="stylesheet" href="./static/css/public.css">
+	<link rel="stylesheet" href="./static/css/headerAndFooter.css">
+	<link rel="stylesheet" href="./static/css/login/login.css">
 	<link rel="stylesheet" href="./static/css/index.css">
-<link rel="stylesheet" href="./static/css/public.css">
-<link rel="stylesheet" href="./static/css/headerAndFooter.css">
-<link rel="stylesheet" href="./static/css/login/login.css">
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top bg-primary"
