@@ -108,8 +108,12 @@
 	}
 	function del(e) {
 		if (confirm("确认删除id为" + e + "的用户？")) {
-			$.post("./delete.jsp", {
-				"userId" : e
+			$.ajax({
+				url: "./delete.jsp",
+				data: {"userId": e},
+				success: function () {
+					window.location.reload();
+                }
 			});
 		}
 	}
