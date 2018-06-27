@@ -7,6 +7,10 @@ a {
     color: #14191e;
     display: block;
 }
+a:hover{
+	text-decoration:none;
+	
+}
 body {
     background-color: #f8fafc!important;
 }

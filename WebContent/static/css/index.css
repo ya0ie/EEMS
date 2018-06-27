@@ -1,0 +1,19 @@
+.table th {
+	text-align: center;
+	vertical-align: middle;
+	font-size: 20px;
+}
+body {
+	width: 1000px !important;
+}
+.table td {
+	font-size: 17px;
+	text-align: center;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.foot-123 li {
+	display: inline-block;
+	margin-top: 20px;
+}
