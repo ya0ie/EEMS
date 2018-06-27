@@ -11,7 +11,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <html>
 <head>
-<head>
 <title>主页</title>
 <link href="./static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="./static/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -19,6 +18,13 @@
 <link rel="stylesheet" href="./static/css/public.css">
 <link rel="stylesheet" href="./static/css/headerAndFooter.css">
 <link rel="stylesheet" href="./static/css/login/login.css">
+<style>
+.table th, .table td {
+	text-align: center;
+	vertical-align: middle;
+}
+
+</style>
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top bg-primary"
@@ -43,14 +49,14 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar" style="margin-top: 20px;">
-				<ul class="nav nav-sidebar" >
-					<li><a href="#"><h4>员工信息列表</h4></a></li>
-					<li><a href="#"><h4>员工信息修改</h4></a></li>
+				<ul class="nav nav-sidebar">
+					<li class="active"><a href="#"><h4>员工信息列表</h4></a></li>
 				</ul>
 			</div>
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top:20px">
-				<div class="table-responsives" style="margin-left: 20%; float: left">
-					<table class="table table-striped" style="font-size:17px">
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"
+				style="margin-top: 20px">
+				<div class="table-responsives" style="margin-left: 5%; float: left">
+					<table class="table table-striped" style="font-size: 17px">
 						<thead>
 							<tr>
 								<th>编号</th>
@@ -63,8 +69,6 @@
 								<th>工资</th>
 								<th>操作</th>
 							</tr>
-							<tr>
-							</tr>
 						</thead>
 						<tbody>
 							<tr>
@@ -73,15 +77,15 @@
 									users = DBUtil.selectAllUser();
 									for (User user : users) {
 								%>
-								<td><%=user.getId()%></td>
-								<td><%=user.getUsername()%></td>
-								<td><%=user.getPassword()%></td>
-								<td><%=user.getRealname()%></td>
-								<td><%=user.getAge()%></td>
-								<td><%=user.getSex()%></td>
-								<td><%=user.getBirthday()%></td>
+								<td class="col-md-1"><%=user.getId()%></td>
+								<td class="col-md-2"><%=user.getUsername()%></td>
+								<td class="col-md-2"><%=user.getPassword()%></td>
+								<td class="col-md-2"><%=user.getRealname()%></td>
+								<td class="col-md-1"><%=user.getAge()%></td>
+								<td class="col-md-1"><%=user.getSex()%></td>
+								<td class="col-md-1"><%=user.getBirthday()%></td>
 								<td><%=user.getSalary()%></td>
-								<td><a class="btn btn-primary btn-sm"
+								<td class="col-md-3"><a class="btn btn-primary btn-sm"
 									href="javascript:edit(<%=user.getId()%>)">编辑</a> <a
 									class="btn btn-danger btn-sm"
 									href="javascript:del(<%=user.getId()%>)">删除</a></td>

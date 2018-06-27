@@ -10,7 +10,7 @@
     int userId = Integer.valueOf(request.getParameter("userId")).intValue();
     boolean flag = DBUtil.deleteByUserId(userId);
     if (flag) {
-        System.out.println("删除成功！走你~");
+	response.sendRedirect("./index.jsp");	
     }
 %>
 </body>

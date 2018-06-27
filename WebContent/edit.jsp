@@ -42,7 +42,7 @@
 		int id = Integer.valueOf(request.getParameter("userId")).intValue();
 		user = DBUtil.selectById(id);
 	%>
-<div id="form-container">
+<div id="form-container" style="margin-left:40%">
 	<form id="edit_form" action="./edit_save.jsp" method="post">
 		<div class="form-group">
 			<label >用户名</label>
