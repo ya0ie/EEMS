@@ -24,11 +24,11 @@ user.setSalary(Double.parseDouble(request.getParameter("salary")));
 String password=request.getParameter("password");
 String spassword=request.getParameter("spassword");
 if(!password.equals(spassword)){
-	System.out.println("密码不一致!");
+	out.print("<script>alert('密码不一致！'); window.location='./index.jsp'</script>");
 }else{
 	user.setPassword(spassword);
 	DBUtil.updateUser(user);
-	System.out.println("修改成功!");
+	out.print("<script>alert('修改成功！'); window.location='./index.jsp'</script>");
 }
 %>
 </body>

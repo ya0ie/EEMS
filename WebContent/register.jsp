@@ -20,12 +20,12 @@
     	user.setPassword(password);
 		boolean flag = DBUtil.insertUser(user);
 		if(flag){
-			System.out.println("注册成功");
-		} else {
-            System.out.println("注册失败");
+			out.print("<script>alert('注册成功！'); window.location='./htmls/login.html'</script>");
+			} else {
+			out.print("<script>alert('注册失败！用户名可能已存在'); window.location='./htmls/login.html'</script>");
         }
     } else {
-        System.out.println("密码错误！！！");
+    	out.print("<script>alert('密码不一致！'); window.location='./htmls/login.html'</script>");
     }
 %>
 </body>
