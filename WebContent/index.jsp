@@ -11,14 +11,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <html>
 <head>
-<title>主页</title> 
-	<link href="./static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="./static/bootstrap/css/bootstrap.css" rel="stylesheet">
-	<link href="./static/bootstrap/css/dashboard.css" rel="stylesheet">
-	<link rel="stylesheet" href="./static/css/public.css">
-	<link rel="stylesheet" href="./static/css/headerAndFooter.css">
-	<link rel="stylesheet" href="./static/css/login/login.css">
-	<link rel="stylesheet" href="./static/css/index.css">
+<title>主页</title>
+<link href="./static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="./static/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="./static/bootstrap/css/dashboard.css" rel="stylesheet">
+<link rel="stylesheet" href="./static/css/public.css">
+<link rel="stylesheet" href="./static/css/headerAndFooter.css">
+<link rel="stylesheet" href="./static/css/login/login.css">
+<link rel="stylesheet" href="./static/css/index.css">
+
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top bg-primary"
@@ -30,7 +31,7 @@
 						onclick="window.open('./index.html', 'self')">
 				</div>
 				<ul id="header-nav-items">
-					<li><a style="text-decoration:none;" href="#" target="_self"><span
+					<li><a style="text-decoration: none;" href="#" target="_self"><span
 							id="tedu-font-style">达内</span>&nbsp;&nbsp;-&nbsp;&nbsp; <span
 							id="NJUCM-font-style">南京中医药大学计算机科学与技术(嵌入式培养)</span>————designed
 							By <span id="team-font-style">天龙特攻队</span> </a></li>
@@ -45,10 +46,26 @@
 			<div class="col-sm-3 col-md-2 sidebar" style="margin-top: 5px;">
 				<ul class="nav nav-sidebar">
 					<li class="active"><a href="#"><h4>员工信息列表</h4></a></li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li style="background: #cd8585;"><a href="#" style="text-decoration:none;"><h4>员工信息搜索</h4></a></li>
+					<li>&nbsp;</li>
+					<li><input type="text" placeholder="姓名关键字查询"
+						class="form-control" style="width: 150px; margin-left: 20px"></li>
 				</ul>
 			</div>
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main "
-				style="margin-top: 5px;margin-bottom:40px">
+				style="margin-top: 5px; margin-bottom: 40px">
 				<div class="table-responsives ">
 					<table class="table table-striped ">
 						<thead>
@@ -96,7 +113,7 @@
 	<nav class="navbar navbar-default navbar-fixed-bottom"
 		style="height: 75px">
 		<div class="container">
-			<div class="footer-link" style="float: left;margin-left:300px">
+			<div class="footer-link" style="float: left; margin-left: 300px">
 				<div>
 					<ul class="foot-123">
 						<li><a href="/about/cooperate" target="_blank" title="企业合作">企业合作</a></li>
@@ -138,4 +155,4 @@
 	}
 </script>
 
-	</html>
+</html>

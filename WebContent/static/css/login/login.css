@@ -152,3 +152,22 @@ footer {
     color: #888;
     font-size: 0.75rem;
 }
+body{
+    background: url("../../images/login/index_1.jpg");
+    animation-name:myfirst;
+    animation-duration:20s;
+    /*变换时间*/
+    animation-delay:3s;
+    /*动画开始时间*/
+    animation-iteration-count:infinite;
+    /*下一周期循环播放*/
+    animation-play-state:running;
+    /*动画开始运行*/
+}
+@keyframes myfirst
+{
+    0%   {background:url("../../images/login/index_1.jpg");}
+    34%  {background:url("../../images/login/index_2.jpg");}
+    67%  {background:url("../../images/login/index_3.jpg");}
+    100% {background:url("../../images/login/index_4.jpg") ;}
+}
