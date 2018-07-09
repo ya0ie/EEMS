@@ -17,7 +17,6 @@
 <link href="./static/bootstrap/css/dashboard.css" rel="stylesheet">
 <link rel="stylesheet" href="./static/css/public.css">
 <link rel="stylesheet" href="./static/css/headerAndFooter.css">
-<link rel="stylesheet" href="./static/css/login/login.css">
 <link rel="stylesheet" href="./static/css/index.css">
 
 </head>
@@ -45,6 +44,7 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar" style="margin-top: 5px;">
 				<ul class="nav nav-sidebar">
+					<li><a href="index.html"><h4>团队成员</h4></a></li>
 					<li class="active"><a href="#"><h4>员工信息列表</h4></a></li>
 					<li>&nbsp;</li>
 					<li>&nbsp;</li>
@@ -58,7 +58,8 @@
 					<li>&nbsp;</li>
 					<li>&nbsp;</li>
 					<li>&nbsp;</li>
-					<li style="background: #cd8585;"><a href="#" style="text-decoration:none;"><h4>员工信息搜索</h4></a></li>
+					<li style="background: #cd8585;"><a href="#"
+						style="text-decoration: none;"><h4>员工信息搜索</h4></a></li>
 					<li>&nbsp;</li>
 					<li><input type="text" placeholder="姓名关键字查询"
 						class="form-control" style="width: 150px; margin-left: 20px"></li>
