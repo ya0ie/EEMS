@@ -195,25 +195,55 @@ public class DBUtil {
         return user;
     }
     public static boolean deleteByUserId(int userId) {
-            Connection conn=null;
-            PreparedStatement ps=null;
-            ResultSet rs=null;
-            conn = getConn();
-            boolean flag=false;
-            String sql="delete from emp where id=?";
-            try {
-                ps = conn.prepareStatement(sql);
-                ps.setInt(1, userId);
-                int count=ps.executeUpdate();
-                if(count!=0){
-                    flag=true;
-                }
-                close(conn, ps, rs);
-            } catch (Exception e) {
-                e.printStackTrace();
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        conn = getConn();
+        boolean flag=false;
+        String sql="delete from emp where id=?";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, userId);
+            int count=ps.executeUpdate();
+            if(count!=0){
+                flag=true;
             }
-            return flag;
+            close(conn, ps, rs);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-	}
+        return flag;
+    }
+
+    public static ArrayList<User> selectByKeyword(String keyword) {
+        ArrayList<User> users = new ArrayList<User>();
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        conn = getConn();
+        String sql="Select * from emp where username=%?%";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, keyword);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                User user = new User();
+                user.setId(rs.getInt("id"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setRealname(rs.getString("realname"));
+                user.setAge(rs.getInt("age"));
+                user.setSex(rs.getString("sex"));
+                user.setBirthday(rs.getString("birthday"));
+                user.setSalary(rs.getDouble("salary"));
+                users.add(user);
+            }
+            close(conn, ps, rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
+}
 
 

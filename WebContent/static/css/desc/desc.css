@@ -14,7 +14,11 @@
     border: #358efb;
     box-shadow: 0 0 10px #358efb;
     transform: scale(1.2);
+<<<<<<< HEAD
+    transition-duration: 0.1s;
+=======
     transition-duration: 0.5s;
+>>>>>>> e74b65fcea2ad665069dfec597f099d982c6338b
     background: #FFFFFF;
 }
 .desc-container {

@@ -14,14 +14,24 @@ header {
 }
 #logo {
     height: 100%;
+    width: 72px;
     margin: 0 28px 0 30px;
     float: left;
     background-size: cover;
     border-radius:  72px;
     overflow:  hidden;
 }
+<<<<<<< HEAD
+img[title='iMooc'] {
+	width: 100%;
+	height: 100%;
+}
+#logo-image{
+    height: 75px;
+=======
 #logo-image{
     height: 100%;
+>>>>>>> e74b65fcea2ad665069dfec597f099d982c6338b
     width: auto;
 }
 #header-nav-items {
